@@ -112,25 +112,25 @@ const TRAINING_PLAN = [
   { id: 'w2-long',     week: 2, day: 'Sat', type: 'long',     targetDate: '2026-03-14', workout: 'Long Run — 3.5 mi',        targetDistance: 3.5, targetPace: '10:15–10:30/mi', notes: '' },
 
   // Week 3: Mar 16–22 — Adding Variety (11.5 mi total, +8% from W2 seed-adjusted)
-  { id: 'w3-easy1',    week: 3, day: 'Mon', type: 'easy',     targetDate: '2026-03-17', workout: 'Easy Run — 2.5 mi + 4×100m strides', targetDistance: 2.5, targetPace: '10:15–10:45/mi', notes: 'Strides: 100m at fast-but-controlled effort, full recovery walk between.' },
+  { id: 'w3-easy1',    week: 3, day: 'Mon', type: 'easy',     targetDate: '2026-03-17', workout: 'Easy Run — 2.5 mi + 4×20 sec strides', targetDistance: 2.5, targetPace: '10:15–10:45/mi', notes: 'Strides: 20 sec at fast-but-controlled effort, 60 sec walk between each.' },
   { id: 'w3-interval', week: 3, day: 'Wed', type: 'interval', targetDate: '2026-03-19', workout: 'Intervals — 3 mi (4×400m @ 9:00 w/ 400m jog)', targetDistance: 3, targetPace: '9:00/mi intervals', notes: '400m = 2:15. Jog recovery should be truly easy.' },
   { id: 'w3-easy2',    week: 3, day: 'Fri', type: 'easy',     targetDate: '2026-03-21', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:30/mi', notes: '' },
   { id: 'w3-long',     week: 3, day: 'Sat', type: 'long',     targetDate: '2026-03-22', workout: 'Long Run — 4 mi',          targetDistance: 4,   targetPace: '10:00–10:30/mi', notes: '' },
 
   // Week 4: Mar 23–29 — Strength Phase (11.5 mi total, 4 runs, +0% — consolidation week)
-  { id: 'w4-easy1',    week: 4, day: 'Mon', type: 'easy',     targetDate: '2026-03-24', workout: 'Easy Run — 2.5 mi + 4×100m strides', targetDistance: 2.5, targetPace: '10:00–10:30/mi', notes: '' },
+  { id: 'w4-easy1',    week: 4, day: 'Mon', type: 'easy',     targetDate: '2026-03-24', workout: 'Easy Run — 2.5 mi + 4×20 sec strides', targetDistance: 2.5, targetPace: '10:00–10:30/mi', notes: '' },
   { id: 'w4-tempo',    week: 4, day: 'Wed', type: 'tempo',    targetDate: '2026-03-26', workout: 'Tempo Run — 3 mi (0.5 WU + 2 tempo + 0.5 CD)', targetDistance: 3, targetPace: '9:30–9:50/mi tempo', notes: 'Hold tempo effort for the full 2 mi middle section.' },
-  { id: 'w4-easy2',    week: 4, day: 'Fri', type: 'easy',     targetDate: '2026-03-27', workout: 'Easy Run — 2 mi + 4×100m strides', targetDistance: 2, targetPace: '10:15–10:45/mi', notes: 'Strides help with turnover without adding fatigue.' },
+  { id: 'w4-easy2',    week: 4, day: 'Fri', type: 'easy',     targetDate: '2026-03-27', workout: 'Easy Run — 2 mi + 4×20 sec strides', targetDistance: 2, targetPace: '10:15–10:45/mi', notes: 'Strides help with turnover without adding fatigue.' },
   { id: 'w4-long',     week: 4, day: 'Sat', type: 'long',     targetDate: '2026-03-28', workout: 'Long Run — 5 mi',          targetDistance: 5,   targetPace: '10:00–10:30/mi', notes: 'New longest run! Take it easy, especially the last mile.' },
 
   // Week 5: Mar 30–Apr 5 — Endurance Push (14.5 mi total, +9%)
-  { id: 'w5-easy1',    week: 5, day: 'Mon', type: 'easy',     targetDate: '2026-03-31', workout: 'Easy Run — 3 mi + 4×100m strides', targetDistance: 3, targetPace: '10:00–10:30/mi', notes: '' },
+  { id: 'w5-easy1',    week: 5, day: 'Mon', type: 'easy',     targetDate: '2026-03-31', workout: 'Easy Run — 3 mi + 4×20 sec strides', targetDistance: 3, targetPace: '10:00–10:30/mi', notes: '' },
   { id: 'w5-interval', week: 5, day: 'Wed', type: 'interval', targetDate: '2026-04-02', workout: 'Intervals — 3.5 mi (5×400m @ 8:45 w/ 400m jog)', targetDistance: 3.5, targetPace: '8:45/mi intervals', notes: '5 reps this week. Save 6× for next week.' },
   { id: 'w5-easy2',    week: 5, day: 'Fri', type: 'easy',     targetDate: '2026-04-04', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15/mi', notes: 'Legs-up-the-wall for 10 min after this one.' },
   { id: 'w5-long',     week: 5, day: 'Sat', type: 'long',     targetDate: '2026-04-05', workout: 'Long Run — 6 mi',          targetDistance: 6,   targetPace: '10:00–10:30/mi', notes: 'Practice race-day hydration. Bring water.' },
 
   // Week 6: Apr 6–12 — Peak Training (16.5 mi total, PEAK WEEK)
-  { id: 'w6-easy1',    week: 6, day: 'Mon', type: 'easy',     targetDate: '2026-04-07', workout: 'Easy Run — 3 mi + 4×100m strides', targetDistance: 3, targetPace: '10:00–10:30/mi', notes: '' },
+  { id: 'w6-easy1',    week: 6, day: 'Mon', type: 'easy',     targetDate: '2026-04-07', workout: 'Easy Run — 3 mi + 4×20 sec strides', targetDistance: 3, targetPace: '10:00–10:30/mi', notes: '' },
   { id: 'w6-interval', week: 6, day: 'Wed', type: 'interval', targetDate: '2026-04-09', workout: 'Intervals — 3.5 mi (6×400m @ 8:30 w/ 400m jog)', targetDistance: 3.5, targetPace: '8:30/mi intervals', notes: '6 reps — your sharpest interval session.' },
   { id: 'w6-easy2',    week: 6, day: 'Fri', type: 'easy',     targetDate: '2026-04-11', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15/mi', notes: 'Keep this one truly easy. Big run tomorrow.' },
   { id: 'w6-long',     week: 6, day: 'Sat', type: 'long',     targetDate: '2026-04-12', workout: 'Long Run — 8 mi (PEAK)',   targetDistance: 8,   targetPace: '10:00–10:30/mi', notes: 'PEAK LONG RUN. After this, you\'re tapering. You\'ve got this.' },
@@ -138,13 +138,13 @@ const TRAINING_PLAN = [
   // Week 7: Apr 13–19 — Taper Week 1 (12 mi total, -27% from peak)
   { id: 'w7-easy1',    week: 7, day: 'Mon', type: 'easy',     targetDate: '2026-04-14', workout: 'Easy Run — 3 mi',          targetDistance: 3,   targetPace: '10:00–10:30/mi', notes: 'You may feel restless with less volume. That\'s normal.' },
   { id: 'w7-tempo',    week: 7, day: 'Wed', type: 'tempo',    targetDate: '2026-04-16', workout: 'Tempo Run — 2 mi (race pace practice)', targetDistance: 2, targetPace: '9:45–10:00/mi', notes: 'Practice your race pace feel. This is a dress rehearsal.' },
-  { id: 'w7-easy2',    week: 7, day: 'Fri', type: 'easy',     targetDate: '2026-04-18', workout: 'Easy Run — 2 mi + 4×100m strides', targetDistance: 2, targetPace: '10:15/mi', notes: 'Stay loose. Strides keep the legs snappy.' },
+  { id: 'w7-easy2',    week: 7, day: 'Fri', type: 'easy',     targetDate: '2026-04-18', workout: 'Easy Run — 2 mi + 4×20 sec strides', targetDistance: 2, targetPace: '10:15/mi', notes: 'Stay loose. Strides keep the legs snappy.' },
   { id: 'w7-long',     week: 7, day: 'Sat', type: 'long',     targetDate: '2026-04-19', workout: 'Long Run — 5 mi',          targetDistance: 5,   targetPace: '10:00–10:30/mi', notes: 'Last long effort before race week. Enjoy it.' },
 
   // Week 8: Apr 20–May 3 — Race Week (proper taper + race)
   { id: 'w8-easy1',    week: 8, day: 'Mon', type: 'easy',     targetDate: '2026-04-21', workout: 'Easy Run — 2.5 mi',        targetDistance: 2.5, targetPace: '10:00–10:30/mi', notes: 'Keep moving. Light and easy.' },
   { id: 'w8-easy2',    week: 8, day: 'Wed', type: 'easy',     targetDate: '2026-04-23', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15/mi', notes: '' },
-  { id: 'w8-shakeout', week: 8, day: 'Thu', type: 'easy',     targetDate: '2026-04-29', workout: 'Shakeout Run — 1.5 mi + 4×100m strides', targetDistance: 1.5, targetPace: '10:00/mi', notes: 'Last run before the race. Short and crisp. Lay out your gear tonight.' },
+  { id: 'w8-shakeout', week: 8, day: 'Thu', type: 'easy',     targetDate: '2026-04-29', workout: 'Shakeout Run — 1.5 mi + 4×20 sec strides', targetDistance: 1.5, targetPace: '10:00/mi', notes: 'Last run before the race. Short and crisp. Lay out your gear tonight.' },
   { id: 'w8-rest',     week: 8, day: 'Fri–Sat', type: 'easy', targetDate: '2026-05-01', workout: 'REST — Full rest days',    targetDistance: 0,   targetPace: '—', notes: 'Hydrate. Carb-load Friday dinner. Visualize the course. Sleep early.' },
   { id: 'w8-race',     week: 8, day: 'Sun', type: 'race',     targetDate: '2026-05-03', workout: 'RACE DAY — Broad Street Run 10 mi', targetDistance: 10, targetPace: '9:45–10:00/mi goal', notes: 'Target: ~1:37–1:40. Start conservative, negative split the back half. You trained for this.' },
 ];
