@@ -102,51 +102,175 @@ const WEEK_META = [
 // Key changes: smoother mileage progression, realistic paces, proper taper
 const TRAINING_PLAN = [
   // Week 1: Mar 3–8 — Base Building (6 mi total)
-  { id: 'w1-long',     week: 1, day: 'Mon', type: 'long',     targetDate: '2026-03-03', workout: 'Long Run — 3 mi',          targetDistance: 3,   targetPace: '10:15–10:30/mi', notes: 'First long run. Find a comfortable rhythm.' },
-  { id: 'w1-easy1',    week: 1, day: 'Wed', type: 'easy',     targetDate: '2026-03-05', workout: 'Easy Run — 1.5 mi',        targetDistance: 1.5, targetPace: '10:30–11:00/mi', notes: 'Recovery pace. Walk breaks are fine.' },
-  { id: 'w1-easy2',    week: 1, day: 'Fri', type: 'easy',     targetDate: '2026-03-07', workout: 'Easy Run — 1.5 mi',        targetDistance: 1.5, targetPace: '10:30–11:00/mi', notes: '' },
+  {
+    id: 'w1-long', week: 1, day: 'Mon', type: 'long', targetDate: '2026-03-03',
+    workout: 'Long Run — 3 mi', targetDistance: 3, targetPace: '10:15–10:30/mi',
+    notes: 'Effort: conversational — you should be able to speak in full sentences the whole time. Start slower than you think you need to. The goal is just time on feet and finding your rhythm. If the pace feels awkward, slow down. Run/walk is totally fine. Focus on relaxed shoulders, soft landing, easy breathing.',
+  },
+  {
+    id: 'w1-easy1', week: 1, day: 'Wed', type: 'easy', targetDate: '2026-03-05',
+    workout: 'Easy Run — 1.5 mi', targetDistance: 1.5, targetPace: '10:30–11:00/mi',
+    notes: 'Pure recovery run. If your legs feel heavy from Monday, go even slower or walk sections. The only rule: don\'t go hard. Think of this as shaking out the stiffness, not building fitness. Done in about 15 minutes.',
+  },
+  {
+    id: 'w1-easy2', week: 1, day: 'Fri', type: 'easy', targetDate: '2026-03-07',
+    workout: 'Easy Run — 1.5 mi', targetDistance: 1.5, targetPace: '10:30–11:00/mi',
+    notes: 'Same as Wednesday — easy and relaxed. You\'ve got a rest day tomorrow, so no need to hold back if you feel good, but don\'t force the pace. Focus on form: tall posture, arms swinging forward (not across your body), feet landing under your hips.',
+  },
 
   // Week 2: Mar 9–15 — Building Consistency (7.5 mi total)
-  { id: 'w2-easy1',    week: 2, day: 'Tue', type: 'easy',     targetDate: '2026-03-10', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15–10:45/mi', notes: '' },
-  { id: 'w2-tempo',    week: 2, day: 'Thu', type: 'tempo',    targetDate: '2026-03-12', workout: 'Tempo Run — 2 mi (0.5 WU + 1 tempo + 0.5 CD)', targetDistance: 2, targetPace: '9:30–9:50/mi tempo', notes: 'First tempo effort. Don\'t chase pace, find the feel.' },
-  { id: 'w2-long',     week: 2, day: 'Sat', type: 'long',     targetDate: '2026-03-14', workout: 'Long Run — 3.5 mi',        targetDistance: 3.5, targetPace: '10:15–10:30/mi', notes: '' },
+  {
+    id: 'w2-easy1', week: 2, day: 'Tue', type: 'easy', targetDate: '2026-03-10',
+    workout: 'Easy Run — 2 mi', targetDistance: 2, targetPace: '10:15–10:45/mi',
+    notes: 'First run of the week — use it to shake out the weekend. RPE 3–4 out of 10. The talk test: can you recite the alphabet out loud without gasping? If not, slow down. You\'re building aerobic base here, and easy runs done too fast undermine that. Takes about 20 minutes.',
+  },
+  {
+    id: 'w2-tempo', week: 2, day: 'Thu', type: 'tempo', targetDate: '2026-03-12',
+    workout: 'Tempo Run — 2 mi (0.5 WU + 1 tempo + 0.5 CD)', targetDistance: 2, targetPace: '9:30–9:50/mi tempo',
+    notes: 'Structure: 0.5 mi easy warm-up jog (10:30+), then 1 mi at tempo effort, then 0.5 mi easy cool-down. Tempo feel: comfortably hard — you can say a few words but not hold a conversation. RPE 7/10. Don\'t go out too fast on the tempo mile; the second half should feel the same effort as the first. Your logged tempo paces have been around 9:40, so that\'s right in the zone.',
+  },
+  {
+    id: 'w2-long', week: 2, day: 'Sat', type: 'long', targetDate: '2026-03-14',
+    workout: 'Long Run — 3.5 mi', targetDistance: 3.5, targetPace: '10:15–10:30/mi',
+    notes: 'Slightly longer than last Saturday. Keep it truly easy — the pace should feel almost embarrassingly slow. Focus on running the whole distance without walking breaks if possible, but walk if needed. Check in at mile 2: are you still comfortable? If so, you\'re doing it right. Hydrate before you go and carry water if it\'s warm.',
+  },
 
-  // Week 3: Mar 16–22 — Adding Variety (11.5 mi total, +8% from W2 seed-adjusted)
-  { id: 'w3-easy1',    week: 3, day: 'Mon', type: 'easy',     targetDate: '2026-03-17', workout: 'Easy Run — 2.5 mi + 4×20 sec strides', targetDistance: 2.5, targetPace: '10:15–10:45/mi', notes: 'Strides: 20 sec at fast-but-controlled effort, 60 sec walk between each.' },
-  { id: 'w3-interval', week: 3, day: 'Wed', type: 'interval', targetDate: '2026-03-19', workout: 'Intervals — 3 mi (4×400m @ 9:00 w/ 400m jog)', targetDistance: 3, targetPace: '9:00/mi intervals', notes: '400m = 2:15. Jog recovery should be truly easy.' },
-  { id: 'w3-easy2',    week: 3, day: 'Fri', type: 'easy',     targetDate: '2026-03-21', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:30/mi', notes: '' },
-  { id: 'w3-long',     week: 3, day: 'Sat', type: 'long',     targetDate: '2026-03-22', workout: 'Long Run — 4 mi',          targetDistance: 4,   targetPace: '10:00–10:30/mi', notes: '' },
+  // Week 3: Mar 16–22 — Adding Variety (11.5 mi total)
+  {
+    id: 'w3-easy1', week: 3, day: 'Mon', type: 'easy', targetDate: '2026-03-17',
+    workout: 'Easy Run — 2.5 mi + 4×20 sec strides', targetDistance: 2.5, targetPace: '10:15–10:45/mi',
+    notes: 'Run the 2.5 mi easy, then do 4 strides at the end. Strides: accelerate smoothly over the first 5 sec, hold fast-but-controlled for 10 sec, then ease off the last 5 sec. Think 85–90% effort, not an all-out sprint. Walk 60 sec between each. They should feel quick and light, not labored. This is your first week doing strides — don\'t overthink it.',
+  },
+  {
+    id: 'w3-interval', week: 3, day: 'Wed', type: 'interval', targetDate: '2026-03-19',
+    workout: 'Intervals — 3 mi (4×400m @ 9:00 w/ 400m jog)', targetDistance: 3, targetPace: '9:00/mi intervals',
+    notes: 'Structure: 0.5 mi easy warm-up, then 4 repeats of [400m hard / 400m easy jog], then 0.5 mi cool-down. Target 400m time: ~2:15 per rep. The jog recovery is just as important as the fast part — keep moving but go genuinely easy, enough that you can catch your breath before the next rep. RPE on the hard 400s: 8/10. If rep 3 or 4 falls apart, that\'s fine — finish the distance at a manageable pace.',
+  },
+  {
+    id: 'w3-easy2', week: 3, day: 'Fri', type: 'easy', targetDate: '2026-03-21',
+    workout: 'Easy Run — 2 mi', targetDistance: 2, targetPace: '10:30/mi',
+    notes: 'Recovery run between Wednesday intervals and Saturday long run. This one should feel effortless — if your legs are still sore from Wednesday, go even slower or walk/run. The purpose is blood flow and loosening up, not adding stress. About 20 minutes. Don\'t skip it just because it feels short.',
+  },
+  {
+    id: 'w3-long', week: 3, day: 'Sat', type: 'long', targetDate: '2026-03-22',
+    workout: 'Long Run — 4 mi', targetDistance: 4, targetPace: '10:00–10:30/mi',
+    notes: 'First time hitting 4 miles. Break it mentally into two halves: miles 1–2 are your warm-up, miles 3–4 are proof you can hold it. If you start at 10:30 and finish at 10:15, that\'s a perfect negative split. Conversational pace the whole way. Eat something small 60–90 min beforehand if you haven\'t already.',
+  },
 
-  // Week 4: Mar 23–29 — Strength Phase (11.5 mi total, 4 runs, +0% — consolidation week)
-  { id: 'w4-easy1',    week: 4, day: 'Mon', type: 'easy',     targetDate: '2026-03-24', workout: 'Easy Run — 2.5 mi + 4×20 sec strides', targetDistance: 2.5, targetPace: '10:00–10:30/mi', notes: '' },
-  { id: 'w4-tempo',    week: 4, day: 'Wed', type: 'tempo',    targetDate: '2026-03-26', workout: 'Tempo Run — 3 mi (0.5 WU + 2 tempo + 0.5 CD)', targetDistance: 3, targetPace: '9:30–9:50/mi tempo', notes: 'Hold tempo effort for the full 2 mi middle section.' },
-  { id: 'w4-easy2',    week: 4, day: 'Fri', type: 'easy',     targetDate: '2026-03-27', workout: 'Easy Run — 2 mi + 4×20 sec strides', targetDistance: 2, targetPace: '10:15–10:45/mi', notes: 'Strides help with turnover without adding fatigue.' },
-  { id: 'w4-long',     week: 4, day: 'Sat', type: 'long',     targetDate: '2026-03-28', workout: 'Long Run — 5 mi',          targetDistance: 5,   targetPace: '10:00–10:30/mi', notes: 'New longest run! Take it easy, especially the last mile.' },
+  // Week 4: Mar 23–29 — Strength Phase (11.5 mi total, 4 runs)
+  {
+    id: 'w4-easy1', week: 4, day: 'Mon', type: 'easy', targetDate: '2026-03-24',
+    workout: 'Easy Run — 2.5 mi + 4×20 sec strides', targetDistance: 2.5, targetPace: '10:00–10:30/mi',
+    notes: 'Four-run week starts here. Keep this genuinely easy so you have legs left for Wednesday\'s tempo and Saturday\'s long run. After the run, do 4 strides: smooth acceleration, hold for 20 sec, walk 60 sec. Focus on quick turnover during the strides — short, snappy steps rather than long bounding strides.',
+  },
+  {
+    id: 'w4-tempo', week: 4, day: 'Wed', type: 'tempo', targetDate: '2026-03-26',
+    workout: 'Tempo Run — 3 mi (0.5 WU + 2 tempo + 0.5 CD)', targetDistance: 3, targetPace: '9:30–9:50/mi tempo',
+    notes: 'Longer tempo than last week — 2 full miles at comfortably hard effort. Structure: 0.5 mi easy warm-up, 2 mi tempo, 0.5 mi cool-down. The challenge is holding the same effort for both tempo miles. Mile 1 will feel manageable; mile 2 should feel like work but still controlled breathing. If you need to slow to 9:55 in mile 2, that\'s fine — effort matters more than splits. Don\'t skip the cool-down jog.',
+  },
+  {
+    id: 'w4-easy2', week: 4, day: 'Fri', type: 'easy', targetDate: '2026-03-27',
+    workout: 'Easy Run — 2 mi + 4×20 sec strides', targetDistance: 2, targetPace: '10:15–10:45/mi',
+    notes: 'Short shakeout before the weekend long run. Keep it very easy — Wednesday was hard, Saturday is hard. This is the bridge between them. Do the 4 strides at the end to keep the legs feeling lively without taxing them. Walk breaks are fine. The goal is to arrive Saturday feeling fresh, not fatigued.',
+  },
+  {
+    id: 'w4-long', week: 4, day: 'Sat', type: 'long', targetDate: '2026-03-28',
+    workout: 'Long Run — 5 mi', targetDistance: 5, targetPace: '10:00–10:30/mi',
+    notes: 'New distance PR — longest run yet. The key: start at 10:30 for the first mile no matter how good you feel, then settle into 10:00–10:15 for miles 2–4, and just survive mile 5. Bring water. If you hit mile 3 and feel great, resist the urge to speed up — you still have 2 miles to go. After the run: eat within 30 min, get your feet up, and stretch your calves and hip flexors.',
+  },
 
   // Week 5: Mar 30–Apr 5 — Endurance Push (14.5 mi total, +9%)
-  { id: 'w5-easy1',    week: 5, day: 'Mon', type: 'easy',     targetDate: '2026-03-31', workout: 'Easy Run — 3 mi + 4×20 sec strides', targetDistance: 3, targetPace: '10:00–10:30/mi', notes: '' },
-  { id: 'w5-interval', week: 5, day: 'Wed', type: 'interval', targetDate: '2026-04-02', workout: 'Intervals — 3.5 mi (5×400m @ 8:45 w/ 400m jog)', targetDistance: 3.5, targetPace: '8:45/mi intervals', notes: '5 reps this week. Save 6× for next week.' },
-  { id: 'w5-easy2',    week: 5, day: 'Fri', type: 'easy',     targetDate: '2026-04-04', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15/mi', notes: 'Legs-up-the-wall for 10 min after this one.' },
-  { id: 'w5-long',     week: 5, day: 'Sat', type: 'long',     targetDate: '2026-04-05', workout: 'Long Run — 6 mi',          targetDistance: 6,   targetPace: '10:00–10:30/mi', notes: 'Practice race-day hydration. Bring water.' },
+  {
+    id: 'w5-easy1', week: 5, day: 'Mon', type: 'easy', targetDate: '2026-03-31',
+    workout: 'Easy Run — 3 mi + 4×20 sec strides', targetDistance: 3, targetPace: '10:00–10:30/mi',
+    notes: 'Back to easy after the weekend long run. Your legs might feel a little dead — that\'s normal adaptation. Don\'t push the pace. The strides at the end will help flush out any stiffness. Focus on relaxed arms, upright posture, and breathing through your nose if you can. If you\'re still sore from Saturday, drop the strides and just run easy.',
+  },
+  {
+    id: 'w5-interval', week: 5, day: 'Wed', type: 'interval', targetDate: '2026-04-02',
+    workout: 'Intervals — 3.5 mi (5×400m @ 8:45 w/ 400m jog)', targetDistance: 3.5, targetPace: '8:45/mi intervals',
+    notes: 'Structure: 0.5 mi warm-up, 5 repeats of [400m at 8:45 / 400m jog], 0.5 mi cool-down. Target 400m time: ~2:11. One more rep than last time and slightly faster — your legs should be more adapted now. The jog recovery should be slow enough that you feel ready (not just willing) to go again. If rep 4 or 5 falls apart, finish the rest as easy running. Don\'t gut out bad reps at the expense of good form.',
+  },
+  {
+    id: 'w5-easy2', week: 5, day: 'Fri', type: 'easy', targetDate: '2026-04-04',
+    workout: 'Easy Run — 2 mi', targetDistance: 2, targetPace: '10:15/mi',
+    notes: 'Short and easy before tomorrow\'s longest run yet. Keep this one honest — no faster than 10:15. If you feel good, that\'s tempting, but the banked energy belongs to Saturday. After you\'re done: legs up the wall for 10 minutes, drink water, eat well tonight. No alcohol. Get to bed by 10pm.',
+  },
+  {
+    id: 'w5-long', week: 5, day: 'Sat', type: 'long', targetDate: '2026-04-05',
+    workout: 'Long Run — 6 mi', targetDistance: 6, targetPace: '10:00–10:30/mi',
+    notes: 'Six miles — over half the race distance. Practice everything race-day: same shoes, same socks, bring water (sip every 1.5 miles), eat a light breakfast 90 min before. Run by feel in the first half. If miles 1–3 feel easy, good — that means you\'re pacing right. Miles 4–6 should feel like steady work but never desperate. Walk 1 minute at mile 3 if you want a mental reset. Celebrate afterward.',
+  },
 
   // Week 6: Apr 6–12 — Peak Training (16.5 mi total, PEAK WEEK)
-  { id: 'w6-easy1',    week: 6, day: 'Mon', type: 'easy',     targetDate: '2026-04-07', workout: 'Easy Run — 3 mi + 4×20 sec strides', targetDistance: 3, targetPace: '10:00–10:30/mi', notes: '' },
-  { id: 'w6-interval', week: 6, day: 'Wed', type: 'interval', targetDate: '2026-04-09', workout: 'Intervals — 3.5 mi (6×400m @ 8:30 w/ 400m jog)', targetDistance: 3.5, targetPace: '8:30/mi intervals', notes: '6 reps — your sharpest interval session.' },
-  { id: 'w6-easy2',    week: 6, day: 'Fri', type: 'easy',     targetDate: '2026-04-11', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15/mi', notes: 'Keep this one truly easy. Big run tomorrow.' },
-  { id: 'w6-long',     week: 6, day: 'Sat', type: 'long',     targetDate: '2026-04-12', workout: 'Long Run — 8 mi (PEAK)',   targetDistance: 8,   targetPace: '10:00–10:30/mi', notes: 'PEAK LONG RUN. After this, you\'re tapering. You\'ve got this.' },
+  {
+    id: 'w6-easy1', week: 6, day: 'Mon', type: 'easy', targetDate: '2026-04-07',
+    workout: 'Easy Run — 3 mi + 4×20 sec strides', targetDistance: 3, targetPace: '10:00–10:30/mi',
+    notes: 'Peak week starts. You\'ll have more miles this week than any other — protect your legs on the easy days. This run should feel like a warm shower, not a workout. RPE 3/10. Strides at the end: smooth and quick, not desperate. Focus on light foot contact — imagine running on hot sand. 60 sec walk between each stride.',
+  },
+  {
+    id: 'w6-interval', week: 6, day: 'Wed', type: 'interval', targetDate: '2026-04-09',
+    workout: 'Intervals — 3.5 mi (6×400m @ 8:30 w/ 400m jog)', targetDistance: 3.5, targetPace: '8:30/mi intervals',
+    notes: 'Your hardest interval session of the plan. Structure: 0.5 mi warm-up, 6 repeats of [400m at 8:30 / 400m jog], 0.5 mi cool-down. Target 400m time: ~2:07. The jump to 6 reps and faster pace is significant — the first 3 should feel controlled, reps 4–6 will require focus. If your form breaks down (hunching, gasping, shuffling) on a rep, cut it short and jog. Quality over quantity. Take an extra 90 sec recovery if you need it between reps 5 and 6.',
+  },
+  {
+    id: 'w6-easy2', week: 6, day: 'Fri', type: 'easy', targetDate: '2026-04-11',
+    workout: 'Easy Run — 2 mi', targetDistance: 2, targetPace: '10:15/mi',
+    notes: 'The most important easy run of the plan. You have your peak long run tomorrow — 8 miles. This 2-miler is purely to stay loose and keep the body primed without adding fatigue. No strides today. Go slow. If you\'re feeling beat up from Wednesday, it\'s OK to walk this one. Eat well tonight: carbs, some protein, plenty of water. Lay out your gear.',
+  },
+  {
+    id: 'w6-long', week: 6, day: 'Sat', type: 'long', targetDate: '2026-04-12',
+    workout: 'Long Run — 8 mi (PEAK)', targetDistance: 8, targetPace: '10:00–10:30/mi',
+    notes: 'This is the summit of your training. 8 miles = 80% of race distance. Start at 10:30 for mile 1, settle into 10:15 for miles 2–5, and just finish miles 6–8 strong but controlled. Bring water and a gel or 2 dates around mile 4 if you want to practice fueling. Miles 6–8 will feel hard — that\'s the point. Run through it, not around it. When you finish, you will know you can handle race day. Recover: eat within 20 min, stretch, nap if possible.',
+  },
 
   // Week 7: Apr 13–19 — Taper Week 1 (12 mi total, -27% from peak)
-  { id: 'w7-easy1',    week: 7, day: 'Mon', type: 'easy',     targetDate: '2026-04-14', workout: 'Easy Run — 3 mi',          targetDistance: 3,   targetPace: '10:00–10:30/mi', notes: 'You may feel restless with less volume. That\'s normal.' },
-  { id: 'w7-tempo',    week: 7, day: 'Wed', type: 'tempo',    targetDate: '2026-04-16', workout: 'Tempo Run — 2 mi (race pace practice)', targetDistance: 2, targetPace: '9:45–10:00/mi', notes: 'Practice your race pace feel. This is a dress rehearsal.' },
-  { id: 'w7-easy2',    week: 7, day: 'Fri', type: 'easy',     targetDate: '2026-04-18', workout: 'Easy Run — 2 mi + 4×20 sec strides', targetDistance: 2, targetPace: '10:15/mi', notes: 'Stay loose. Strides keep the legs snappy.' },
-  { id: 'w7-long',     week: 7, day: 'Sat', type: 'long',     targetDate: '2026-04-19', workout: 'Long Run — 5 mi',          targetDistance: 5,   targetPace: '10:00–10:30/mi', notes: 'Last long effort before race week. Enjoy it.' },
+  {
+    id: 'w7-easy1', week: 7, day: 'Mon', type: 'easy', targetDate: '2026-04-14',
+    workout: 'Easy Run — 3 mi', targetDistance: 3, targetPace: '10:00–10:30/mi',
+    notes: 'Welcome to the taper. Volume drops this week and you may feel restless, flat, or even sluggish — that\'s completely normal and called "taper madness." Your body is absorbing the fitness you built. Resist the urge to run extra miles or push the pace to feel better. Just run easy, smile, and trust the process. RPE 3–4/10, conversational the whole way.',
+  },
+  {
+    id: 'w7-tempo', week: 7, day: 'Wed', type: 'tempo', targetDate: '2026-04-16',
+    workout: 'Tempo Run — 2 mi (race pace practice)', targetDistance: 2, targetPace: '9:45–10:00/mi',
+    notes: 'This is your dress rehearsal. Structure: 0.5 mi warm-up, 1 mi at goal race pace (9:45–10:00), 0.5 mi cool-down. The middle mile should feel exactly like what you want mile 3 of the race to feel like — controlled, focused, sustainable. Not easy, not desperate. This run is about ingraining the feeling, not about fitness gains. Wear what you plan to race in.',
+  },
+  {
+    id: 'w7-easy2', week: 7, day: 'Fri', type: 'easy', targetDate: '2026-04-18',
+    workout: 'Easy Run — 2 mi + 4×20 sec strides', targetDistance: 2, targetPace: '10:15/mi',
+    notes: 'Short and sharp. Easy 2 miles, then 4 strides to keep the legs feeling snappy without taxing them. The strides should feel effortless and quick — almost fun. 60 sec walk between each. This is your last pre-long-run run. Keep it brief. Don\'t add miles. Don\'t push the strides. Just stay loose.',
+  },
+  {
+    id: 'w7-long', week: 7, day: 'Sat', type: 'long', targetDate: '2026-04-19',
+    workout: 'Long Run — 5 mi', targetDistance: 5, targetPace: '10:00–10:30/mi',
+    notes: 'Last long run before race week. 5 miles should feel comfortable now — you ran 8 last week. Go easy and enjoy it. This is a confidence run, not a fitness run. Let yourself feel good. If the legs feel light and springy, that\'s the taper working. After this run, your hardest work is done. Soak your legs if you can. Keep eating well.',
+  },
 
   // Week 8: Apr 20–May 3 — Race Week (proper taper + race)
-  { id: 'w8-easy1',    week: 8, day: 'Mon', type: 'easy',     targetDate: '2026-04-21', workout: 'Easy Run — 2.5 mi',        targetDistance: 2.5, targetPace: '10:00–10:30/mi', notes: 'Keep moving. Light and easy.' },
-  { id: 'w8-easy2',    week: 8, day: 'Wed', type: 'easy',     targetDate: '2026-04-23', workout: 'Easy Run — 2 mi',          targetDistance: 2,   targetPace: '10:15/mi', notes: '' },
-  { id: 'w8-shakeout', week: 8, day: 'Thu', type: 'easy',     targetDate: '2026-04-29', workout: 'Shakeout Run — 1.5 mi + 4×20 sec strides', targetDistance: 1.5, targetPace: '10:00/mi', notes: 'Last run before the race. Short and crisp. Lay out your gear tonight.' },
-  { id: 'w8-rest',     week: 8, day: 'Fri–Sat', type: 'easy', targetDate: '2026-05-01', workout: 'REST — Full rest days',    targetDistance: 0,   targetPace: '—', notes: 'Hydrate. Carb-load Friday dinner. Visualize the course. Sleep early.' },
-  { id: 'w8-race',     week: 8, day: 'Sun', type: 'race',     targetDate: '2026-05-03', workout: 'RACE DAY — Broad Street Run 10 mi', targetDistance: 10, targetPace: '9:45–10:00/mi goal', notes: 'Target: ~1:37–1:40. Start conservative, negative split the back half. You trained for this.' },
+  {
+    id: 'w8-easy1', week: 8, day: 'Mon', type: 'easy', targetDate: '2026-04-21',
+    workout: 'Easy Run — 2.5 mi', targetDistance: 2.5, targetPace: '10:00–10:30/mi',
+    notes: 'Race week. Keep all runs this week short and easy — you are not gaining fitness anymore, just staying loose. This 2.5 mi should take about 25 minutes and feel like a casual walk-jog. RPE 3/10. Focus on breathing, posture, and relaxation. Start mentally preparing: visualize the start line, the feeling of the first mile, crossing Broad St.',
+  },
+  {
+    id: 'w8-easy2', week: 8, day: 'Wed', type: 'easy', targetDate: '2026-04-23',
+    workout: 'Easy Run — 2 mi', targetDistance: 2, targetPace: '10:15/mi',
+    notes: 'Last proper easy run of the week. Keep it light — 20 minutes max. No strides, no tempo pushes. Drink extra water today and Thursday. Start carb-loading Thursday dinner. If you feel stiff or anxious, that\'s normal pre-race nerves. Running easy for 20 minutes will help settle both.',
+  },
+  {
+    id: 'w8-shakeout', week: 8, day: 'Thu', type: 'easy', targetDate: '2026-04-29',
+    workout: 'Shakeout Run — 1.5 mi + 4×20 sec strides', targetDistance: 1.5, targetPace: '10:00/mi',
+    notes: 'Last run before the race. 15 minutes easy, then 4 quick strides to remind your legs what fast feels like. Everything should feel smooth and effortless — if it does, you\'re ready. After this run: lay out all your gear (bib, chip, shoes, socks, shorts, top, fuel, watch). Set two alarms. Eat your normal dinner, nothing adventurous. Get to bed by 9:30pm.',
+  },
+  {
+    id: 'w8-rest', week: 8, day: 'Fri–Sat', type: 'easy', targetDate: '2026-05-01',
+    workout: 'REST — Full rest days', targetDistance: 0, targetPace: '—',
+    notes: 'Full rest. Walk normally, don\'t stand for hours. Fri dinner: big pasta or rice meal with protein. Sat: light carb-heavy meals throughout the day, no big dinner. Hydrate all day both days — your urine should be pale yellow. Avoid alcohol. Charge your watch. Confirm your bib pickup if needed. Bus to start: check the BSR schedule, arrive at Navy Yard early. Visualize your race.',
+  },
+  {
+    id: 'w8-race', week: 8, day: 'Sun', type: 'race', targetDate: '2026-05-03',
+    workout: 'RACE DAY — Broad Street Run 10 mi', targetDistance: 10, targetPace: '9:45–10:00/mi goal',
+    notes: 'Goal: 1:37–1:40 finish (9:45–10:00/mi). Strategy: Miles 1–2 will feel easy — hold back, run 10:00–10:15. Miles 3–6 settle into goal pace, 9:45–10:00, find your groove. Miles 7–8 stay focused, this is where the race gets real. Miles 9–10 leave it all on the course. The crowd on Broad St will carry you. Start conservative. Do not go out with the fast pack. The first 2 miles of BSR notoriously pull people out too fast. You trained for this — trust it.',
+  },
 ];
 
 // Week labels for backward compat
