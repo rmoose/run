@@ -336,6 +336,46 @@ const Store = {
     return { completed, total: totalRuns, pct: totalRuns > 0 ? Math.round((completed / totalRuns) * 100) : 0 };
   },
 
+  // --- Export / Import ---
+  exportData() {
+    return {
+      version: STORE_VERSION,
+      exportedAt: new Date().toISOString(),
+      runs: this.getRuns(),
+      planState: this.getPlanState(),
+    };
+  },
+
+  importData(data) {
+    if (!data || !data.runs || !data.planState) {
+      throw new Error('Invalid data format');
+    }
+    // Merge runs by id
+    const existingRuns = this.getRuns();
+    const existingIds = new Set(existingRuns.map(r => r.id));
+    const merged = [...existingRuns];
+    let added = 0;
+    let updated = 0;
+    data.runs.forEach(r => {
+      if (existingIds.has(r.id)) {
+        const idx = merged.findIndex(e => e.id === r.id);
+        merged[idx] = r;
+        updated++;
+      } else {
+        merged.push(r);
+        added++;
+      }
+    });
+    this._saveRuns(merged);
+
+    // Merge plan state
+    const existingPlan = this.getPlanState();
+    const mergedPlan = { ...existingPlan, ...data.planState };
+    this._savePlanState(mergedPlan);
+
+    return { added, updated, totalRuns: merged.length };
+  },
+
   // Reset
   reset() {
     Object.values(STORAGE_KEYS).forEach(k => localStorage.removeItem(k));

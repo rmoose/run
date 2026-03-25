@@ -131,6 +131,7 @@ function TabBar({ active, onChange }) {
     { id: 'plan', label: 'Plan', icon: '\u{1F4CB}' },
     { id: 'log', label: 'Log', icon: '\u{1F3C3}' },
     { id: 'history', label: 'History', icon: '\u{1F4CA}' },
+    { id: 'data', label: 'Sync', icon: '\u{1F504}' },
   ];
   return (
     <nav className="tab-bar">
@@ -1057,6 +1058,95 @@ function RunHistory({ runs, onDelete, onEdit }) {
 }
 
 // ══════════════════════════
+// DATA SYNC
+// ══════════════════════════
+
+function DataManager({ runs, planState, onImport, showToast }) {
+  const [importText, setImportText] = useState('');
+
+  function handleExport() {
+    const data = Store.exportData();
+    const json = JSON.stringify(data, null, 2);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(json).then(() => {
+        showToast('Copied to clipboard!');
+      }).catch(() => {
+        setImportText(json);
+        showToast('Clipboard unavailable — text shown below, copy manually');
+      });
+    } else {
+      setImportText(json);
+      showToast('Clipboard unavailable — text shown below, copy manually');
+    }
+  }
+
+  function handleImport() {
+    if (!importText.trim()) return;
+    try {
+      const data = JSON.parse(importText.trim());
+      const result = Store.importData(data);
+      onImport();
+      setImportText('');
+      showToast(`Imported! ${result.added} new, ${result.updated} updated — ${result.totalRuns} total runs`);
+    } catch (e) {
+      showToast(e.message || 'Invalid JSON');
+    }
+  }
+
+  function handleReset() {
+    // Use the app's confirm flow would be ideal, but keep it simple
+    if (!window.confirm('Reset ALL data back to the original seed runs? This cannot be undone.')) return;
+    Store.reset();
+    onImport();
+    showToast('Data reset to seed runs');
+  }
+
+  const adherence = Store.getPlanAdherence();
+
+  return (
+    <div className="data-manager">
+      <h2>Sync Data</h2>
+      <p className="section-subtitle">
+        Export your data on one device, then import on another to stay in sync.
+      </p>
+
+      <div className="data-section">
+        <h3>Export</h3>
+        <p className="muted">Copies all {runs.length} runs and {adherence.completed} completed workouts as JSON.</p>
+        <button className="btn-primary" onClick={handleExport} style={{ marginTop: '8px' }}>
+          Copy Data to Clipboard
+        </button>
+      </div>
+
+      <div className="data-section">
+        <h3>Import</h3>
+        <p className="muted">Paste exported JSON from another device. Data is merged (not replaced).</p>
+        <textarea
+          className="import-textarea"
+          rows="6"
+          placeholder="Paste exported JSON here..."
+          value={importText}
+          onChange={e => setImportText(e.target.value)}
+        ></textarea>
+        <button
+          className="btn-primary"
+          onClick={handleImport}
+          disabled={!importText.trim()}
+          style={{ marginTop: '8px', opacity: importText.trim() ? 1 : 0.5 }}
+        >
+          Import Data
+        </button>
+      </div>
+
+      <div className="data-section danger-zone">
+        <h3>Danger Zone</h3>
+        <button className="btn-danger" onClick={handleReset}>Reset to Seed Data</button>
+      </div>
+    </div>
+  );
+}
+
+// ══════════════════════════
 // MAIN APP
 // ══════════════════════════
 
@@ -1113,6 +1203,11 @@ function App() {
   const handleTogglePlan = useCallback((planRunId, completed) => {
     const newState = Store.togglePlanRun(planRunId, completed);
     setPlanState(newState);
+  }, []);
+
+  const handleImportRefresh = useCallback(() => {
+    setRuns(Store.getRuns());
+    setPlanState(Store.getPlanState());
   }, []);
 
   const handleNavigateToLog = useCallback((planId) => {
@@ -1179,6 +1274,14 @@ function App() {
             runs={runs}
             onDelete={handleDeleteRun}
             onEdit={handleEditRun}
+          />
+        )}
+        {tab === 'data' && (
+          <DataManager
+            runs={runs}
+            planState={planState}
+            onImport={handleImportRefresh}
+            showToast={showToast}
           />
         )}
       </main>

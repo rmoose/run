@@ -1505,6 +1505,71 @@ h3 { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
 }
 
 /* ══════════════════════════
+   DATA SYNC
+   ══════════════════════════ */
+
+.data-manager .section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.data-section {
+  margin-bottom: 24px;
+}
+
+.data-section h3 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.import-textarea {
+  width: 100%;
+  background: var(--glass-bg, rgba(255,255,255,0.04));
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 10px;
+  padding: 12px;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  outline: none;
+  resize: vertical;
+  margin-top: 8px;
+  transition: border-color 0.2s;
+}
+
+.import-textarea:focus {
+  border-color: var(--accent);
+}
+
+.danger-zone {
+  margin-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 20px;
+}
+
+.danger-zone h3 {
+  color: var(--red, #f85149);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--red, #f85149);
+  border: 1px solid var(--red, #f85149);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-danger:hover {
+  background: var(--red, #f85149);
+  color: #fff;
+}
+
+/* ══════════════════════════
    RESPONSIVE
    ══════════════════════════ */
 
