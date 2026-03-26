@@ -1505,6 +1505,112 @@ h3 { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
 }
 
 /* ══════════════════════════
+   COACH NOTES
+   ══════════════════════════ */
+
+.coach-notes-section {
+  margin-top: 16px;
+}
+
+.coach-notes-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.coach-icon { font-size: 1.1rem; }
+
+.coach-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex: 1;
+}
+
+.coach-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.coach-card {
+  background: var(--glass-bg, rgba(255,255,255,0.04));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+}
+
+.coach-card.latest {
+  border-left: 3px solid #00d4ff;
+}
+
+.coach-card.older {
+  opacity: 0.7;
+}
+
+.coach-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.coach-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.coach-card.older .coach-card-title { margin-bottom: 0; }
+
+.coach-text {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.coach-next {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  padding: 8px 10px;
+  background: rgba(0, 212, 255, 0.06);
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.coach-next-label {
+  font-weight: 600;
+  color: #00d4ff;
+}
+
+.coach-adjustment {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  padding: 8px 10px;
+  background: rgba(209, 154, 35, 0.08);
+  border-radius: 8px;
+}
+
+.coach-adj-label {
+  font-weight: 600;
+  color: #d29922;
+}
+
+.coach-history-toggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 6px 0;
+  margin-bottom: 8px;
+  transition: color 0.15s;
+}
+
+.coach-history-toggle:hover { color: var(--text); }
+
+/* ══════════════════════════
    DATA SYNC
    ══════════════════════════ */
 

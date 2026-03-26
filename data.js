@@ -432,3 +432,24 @@ const SEED_RUNS = [
     updatedAt: '2026-03-25T21:39:55.896Z',
   },
 ];
+
+// Coach notes — updated each time Ryan syncs progress
+// Each entry corresponds to a sync checkpoint
+const COACH_NOTES = [
+  {
+    id: 'note-1',
+    date: '2026-03-22',
+    title: 'Week 3 Complete',
+    progress: 'First 3 weeks in the books with 6 runs and 16.4 miles total. You went from 1.5 mi comfortable to a 4.22 mi long run — that\'s nearly tripling your distance in 3 weeks while staying in the 10:00\u201310:45 range. The negative split on Mar 22 (10:40 down to 10:01) shows you\'re learning to settle in and find a groove mid-run, which is exactly what you want for a 10-miler.',
+    nextRun: 'Week 4 opens with an easy 2.5 mi on Monday. Keep it truly conversational \u2014 this is a recovery week opener after your longest run yet.',
+    planAdjustment: null,
+  },
+  {
+    id: 'note-2',
+    date: '2026-03-26',
+    title: 'Tempo Pace is Dialed In',
+    progress: 'That Week 4 tempo was excellent. Your middle splits (8:45, 8:54) are right in the interval zone, not just tempo \u2014 which means your tempo ceiling is higher than expected. The warm-up at 9:50 and cool-down at 11:07 show good discipline in not starting too hot and properly winding down. 9 runs logged, 23.6 total miles, and you\'re 3-for-3 in Week 4.',
+    nextRun: 'Week 4 long run on Saturday \u2014 5 miles, your first time past 4.22. This is the biggest single-week distance jump in the plan (+0.78 mi). Keep pace at 10:00\u201310:30, don\'t chase the tempo fitness. If mile 4 feels hard, slow down rather than push through.',
+    planAdjustment: 'No changes needed. Your paces are consistently faster than target across all run types. If the 5-miler feels comfortable, you\'re in great shape for the Week 5 jump to 6.',
+  },
+];

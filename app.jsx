@@ -269,8 +269,73 @@ function Dashboard({ runs, planState, onNavigateToLog }) {
       {/* Pace Trend */}
       {pacedRuns.length > 2 && <PaceTrendChart runs={pacedRuns} />}
 
+      {/* Coach Notes */}
+      <CoachNotes />
+
       {/* Motivational Insight */}
       <MotivationalInsight weekMeta={weekMeta} currentWeek={currentWeek} adherence={adherence} />
+    </div>
+  );
+}
+
+// ── Coach Notes ──
+
+function CoachNotes() {
+  const [expanded, setExpanded] = useState(false);
+
+  if (!window.COACH_NOTES || COACH_NOTES.length === 0) return null;
+
+  const latest = COACH_NOTES[COACH_NOTES.length - 1];
+  const older = COACH_NOTES.slice(0, -1).reverse();
+
+  return (
+    <div className="coach-notes-section">
+      <div className="coach-notes-header">
+        <span className="coach-icon">{'\u{1F3C1}'}</span>
+        <span className="coach-title">Coach Notes</span>
+        <span className="coach-date">{formatDateShort(latest.date)}</span>
+      </div>
+
+      <div className="coach-card latest">
+        <div className="coach-card-title">{latest.title}</div>
+        <p className="coach-text">{latest.progress}</p>
+        {latest.nextRun && (
+          <div className="coach-next">
+            <span className="coach-next-label">Next up:</span> {latest.nextRun}
+          </div>
+        )}
+        {latest.planAdjustment && (
+          <div className="coach-adjustment">
+            <span className="coach-adj-label">Plan update:</span> {latest.planAdjustment}
+          </div>
+        )}
+      </div>
+
+      {older.length > 0 && (
+        <button className="coach-history-toggle" onClick={() => setExpanded(!expanded)}>
+          {expanded ? 'Hide' : 'Show'} previous notes ({older.length})
+        </button>
+      )}
+
+      {expanded && older.map(note => (
+        <div key={note.id} className="coach-card older">
+          <div className="coach-card-top">
+            <span className="coach-card-title">{note.title}</span>
+            <span className="coach-date">{formatDateShort(note.date)}</span>
+          </div>
+          <p className="coach-text">{note.progress}</p>
+          {note.nextRun && (
+            <div className="coach-next">
+              <span className="coach-next-label">Next up:</span> {note.nextRun}
+            </div>
+          )}
+          {note.planAdjustment && (
+            <div className="coach-adjustment">
+              <span className="coach-adj-label">Plan update:</span> {note.planAdjustment}
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
