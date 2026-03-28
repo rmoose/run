@@ -448,6 +448,23 @@ const SEED_RUNS = [
     createdAt: '2026-03-27T21:41:23.346Z',
     updatedAt: '2026-03-27T21:41:23.346Z',
   },
+  {
+    id: 'seed-11',
+    date: '2026-03-28',
+    distance: 5.01,
+    pace: '10:08',
+    duration: '50:49',
+    type: 'long',
+    location: 'Philadelphia',
+    notes: '',
+    effort: 6,
+    feel: 4,
+    weather: { condition: 'sunny', temp: '45' },
+    splits: ['10:25', '10:07', '9:58', '9:56', '10:12'],
+    planRunId: 'w4-long',
+    createdAt: '2026-03-28T22:07:05.434Z',
+    updatedAt: '2026-03-28T22:07:05.434Z',
+  },
 ];
 
 // Coach notes — updated each time Ryan syncs progress
@@ -472,9 +489,9 @@ const COACH_NOTES = [
   {
     id: 'note-3',
     date: '2026-03-28',
-    title: '5-Miler Day',
-    progress: 'Smart recovery run Friday \u2014 2 mi at 10:56 with dead-even splits (10:54, 10:56) and feeling good (4/4). That\u2019s exactly how you should feel two days after a tempo: low effort, legs turning over, nothing forced. You\u2019re now 10 runs in with 25.6 total miles. Week 4 has been your most complete week yet \u2014 easy, tempo, AND recovery all logged before the long run.',
-    nextRun: 'The big one: 5 miles today (Saturday). This is your longest run ever in this training cycle. Target 10:00\u201310:15 pace. Don\u2019t start faster than 10:20 for the first mile even if you feel great \u2014 save that energy for miles 3\u20135. Your Mar 22 long run showed you tend to start hard and settle in, so deliberately hold back early.',
-    planAdjustment: 'Everything on track. After the 5-miler, Week 5 jumps to a 6 mi long run \u2014 only +1 mi, well within the 1.5 mi/week cap. Your tempo and easy paces are both ahead of schedule, so the fitness is there. Just respect the distance.',
+    title: 'Week 4 Complete \u2014 5 Miles Done',
+    progress: '5.01 miles at 10:08 avg \u2014 your longest run in the training cycle, and you made it look easy (effort 6/10, feel 4/4). The splits tell the story: 10:25 \u2192 10:07 \u2192 9:58 \u2192 9:56 \u2192 10:12. That\u2019s a textbook negative split through mile 4, then a smart, controlled close instead of blowing up. You\u2019re learning to run the back half faster than the front, which is the #1 skill for the 10-miler. Week 4 is a perfect 4-for-4. 11 runs, 30.6 total miles \u2014 you\u2019re halfway through the plan.',
+    nextRun: 'Week 5 starts Monday with an easy 3 mi. Keep it relaxed after today \u2014 your legs earned a couple easy days. The week builds to a 6 mi long run on Saturday, which is only +1 mi from today. Your interval session (Wednesday) will be 5\u00d7400m at 8:45 pace \u2014 your tempo splits say you can handle that.',
+    planAdjustment: 'No changes. You\u2019re consistently beating target paces: long runs averaging 10:08\u201310:12 vs. 10:00\u201310:15 target, tempos hitting 8:45\u20138:54 vs. 9:15\u20139:30 target. The fitness is building faster than the plan assumed. Keep doing exactly what you\u2019re doing.',
   },
 ];
