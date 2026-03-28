@@ -472,9 +472,9 @@ const COACH_NOTES = [
   {
     id: 'note-3',
     date: '2026-03-28',
-    title: 'Week 4 Long Run Tomorrow',
-    progress: 'Smart recovery run yesterday \u2014 2 mi at 10:56 with dead-even splits (10:54, 10:56) and feeling good (4/4). That\u2019s exactly how you should feel the day after a tempo: low effort, legs turning over, nothing forced. You\u2019re now 10 runs in with 25.6 total miles. Week 4 has been your most complete week yet \u2014 easy, tempo, AND recovery all logged before the long run.',
-    nextRun: 'The big one: 5 miles tomorrow (Saturday). This is your longest run ever in this training cycle. Target 10:00\u201310:15 pace. Don\u2019t start faster than 10:20 for the first mile even if you feel great \u2014 save that energy for miles 3\u20135. Your Mar 22 long run showed you tend to start hard and settle in, so deliberately hold back early.',
+    title: '5-Miler Day',
+    progress: 'Smart recovery run Friday \u2014 2 mi at 10:56 with dead-even splits (10:54, 10:56) and feeling good (4/4). That\u2019s exactly how you should feel two days after a tempo: low effort, legs turning over, nothing forced. You\u2019re now 10 runs in with 25.6 total miles. Week 4 has been your most complete week yet \u2014 easy, tempo, AND recovery all logged before the long run.',
+    nextRun: 'The big one: 5 miles today (Saturday). This is your longest run ever in this training cycle. Target 10:00\u201310:15 pace. Don\u2019t start faster than 10:20 for the first mile even if you feel great \u2014 save that energy for miles 3\u20135. Your Mar 22 long run showed you tend to start hard and settle in, so deliberately hold back early.',
     planAdjustment: 'Everything on track. After the 5-miler, Week 5 jumps to a 6 mi long run \u2014 only +1 mi, well within the 1.5 mi/week cap. Your tempo and easy paces are both ahead of schedule, so the fitness is there. Just respect the distance.',
   },
 ];
