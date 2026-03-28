@@ -431,6 +431,23 @@ const SEED_RUNS = [
     createdAt: '2026-03-25T21:39:55.896Z',
     updatedAt: '2026-03-25T21:39:55.896Z',
   },
+  {
+    id: 'seed-10',
+    date: '2026-03-27',
+    distance: 2,
+    pace: '10:56',
+    duration: '23:12',
+    type: 'easy',
+    location: 'Philadelphia',
+    notes: '',
+    effort: 4,
+    feel: 4,
+    weather: { condition: 'cloudy', temp: '51' },
+    splits: ['10:54', '10:56'],
+    planRunId: 'w4-easy2',
+    createdAt: '2026-03-27T21:41:23.346Z',
+    updatedAt: '2026-03-27T21:41:23.346Z',
+  },
 ];
 
 // Coach notes — updated each time Ryan syncs progress
@@ -451,5 +468,13 @@ const COACH_NOTES = [
     progress: 'That Week 4 tempo was excellent. Your middle splits (8:45, 8:54) are right in the interval zone, not just tempo \u2014 which means your tempo ceiling is higher than expected. The warm-up at 9:50 and cool-down at 11:07 show good discipline in not starting too hot and properly winding down. 9 runs logged, 23.6 total miles, and you\'re 3-for-3 in Week 4.',
     nextRun: 'Week 4 long run on Saturday \u2014 5 miles, your first time past 4.22. This is the biggest single-week distance jump in the plan (+0.78 mi). Keep pace at 10:00\u201310:30, don\'t chase the tempo fitness. If mile 4 feels hard, slow down rather than push through.',
     planAdjustment: 'No changes needed. Your paces are consistently faster than target across all run types. If the 5-miler feels comfortable, you\'re in great shape for the Week 5 jump to 6.',
+  },
+  {
+    id: 'note-3',
+    date: '2026-03-28',
+    title: 'Week 4 Long Run Tomorrow',
+    progress: 'Smart recovery run yesterday \u2014 2 mi at 10:56 with dead-even splits (10:54, 10:56) and feeling good (4/4). That\u2019s exactly how you should feel the day after a tempo: low effort, legs turning over, nothing forced. You\u2019re now 10 runs in with 25.6 total miles. Week 4 has been your most complete week yet \u2014 easy, tempo, AND recovery all logged before the long run.',
+    nextRun: 'The big one: 5 miles tomorrow (Saturday). This is your longest run ever in this training cycle. Target 10:00\u201310:15 pace. Don\u2019t start faster than 10:20 for the first mile even if you feel great \u2014 save that energy for miles 3\u20135. Your Mar 22 long run showed you tend to start hard and settle in, so deliberately hold back early.',
+    planAdjustment: 'Everything on track. After the 5-miler, Week 5 jumps to a 6 mi long run \u2014 only +1 mi, well within the 1.5 mi/week cap. Your tempo and easy paces are both ahead of schedule, so the fitness is there. Just respect the distance.',
   },
 ];
